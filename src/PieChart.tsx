@@ -87,7 +87,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
             />
           ) : null}
           {hasLegend ? (
-            <View style={{ width: 100, flex: 1 }}>
+            <G>
               <Text
                 fill={c.item.legendFontColor}
                 fontSize={c.item.legendFontSize}
@@ -114,7 +114,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
               >
                 {c.item.name}
               </Text>
-            </View>
+            </G>
           ) : null}
         </G>
       );
