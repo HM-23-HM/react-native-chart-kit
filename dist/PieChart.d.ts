@@ -13,6 +13,6 @@ export interface PieChartProps extends AbstractChartProps {
   style?: Partial<ViewStyle>;
   avoidFalseZero?: boolean;
 }
-declare const PieChart: ({ props }: { props: PieChartProps }) => any;
+declare const PieChart: (props: PieChartProps) => any;
 export default PieChart;
 //# sourceMappingURL=PieChart.d.ts.map

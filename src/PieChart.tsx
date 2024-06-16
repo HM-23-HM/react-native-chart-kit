@@ -18,7 +18,7 @@ export interface PieChartProps extends AbstractChartProps {
   avoidFalseZero?: boolean;
 }
 
-const PieChart = ({ props }: { props: PieChartProps }) => {
+const PieChart = (props: PieChartProps) => {
   const {
     style = {},
     backgroundColor,
