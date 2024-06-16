@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { ChartConfig, Dataset, PartialBy } from "./HelperTypes";
 export interface AbstractChartProps {
   fromZero?: boolean;
@@ -403,8 +403,8 @@ declare class AbstractChart<
     fontVariantLigatures?: import("react-native-svg").FontVariantLigatures;
     fontVariationSettings?: string;
   };
-  renderHorizontalLines: (config: any) => JSX.Element[];
-  renderHorizontalLine: (config: any) => JSX.Element;
+  renderHorizontalLines: (config: any) => React.JSX.Element[];
+  renderHorizontalLine: (config: any) => React.JSX.Element;
   renderHorizontalLabels: (
     config: Pick<
       AbstractChartConfig,
@@ -461,7 +461,7 @@ declare class AbstractChart<
     > & {
       data: number[];
     }
-  ) => JSX.Element[];
+  ) => React.JSX.Element[];
   renderVerticalLabels: ({
     labels,
     width,
@@ -485,7 +485,7 @@ declare class AbstractChart<
     | "verticalLabelRotation"
     | "formatXLabel"
     | "verticalLabelsHeightPercentage"
-  >) => JSX.Element[];
+  >) => React.JSX.Element[];
   renderVerticalLines: ({
     data,
     width,
@@ -510,7 +510,7 @@ declare class AbstractChart<
     | "verticalLabelsHeightPercentage"
   > & {
     data: number[];
-  }) => JSX.Element[];
+  }) => React.JSX.Element[];
   renderVerticalLine: ({
     height,
     paddingTop,
@@ -519,7 +519,7 @@ declare class AbstractChart<
   }: Pick<
     AbstractChartConfig,
     "height" | "paddingRight" | "paddingTop" | "verticalLabelsHeightPercentage"
-  >) => JSX.Element;
+  >) => React.JSX.Element;
   renderDefs: (
     config: Pick<
       PartialBy<
@@ -552,7 +552,7 @@ declare class AbstractChart<
       | "fillShadowGradientToOpacity"
       | "fillShadowGradientToOffset"
     >
-  ) => JSX.Element;
+  ) => React.JSX.Element;
 }
 export default AbstractChart;
 //# sourceMappingURL=AbstractChart.d.ts.map

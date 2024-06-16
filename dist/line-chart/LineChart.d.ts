@@ -247,7 +247,7 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
     "height" | "paddingRight" | "paddingTop" | "width" | "data"
   > & {
     useColorFromDataset: AbstractChartConfig["useShadowColorFromDataset"];
-  }) => JSX.Element[];
+  }) => React.JSX.Element[];
   renderLine: ({
     width,
     height,
@@ -282,7 +282,7 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
   }: Pick<
     AbstractChartConfig,
     "data" | "width" | "height" | "paddingRight" | "paddingTop"
-  >) => JSX.Element[];
+  >) => React.JSX.Element[];
   renderBezierShadow: ({
     width,
     height,
@@ -295,9 +295,9 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
     "height" | "paddingRight" | "paddingTop" | "width" | "data"
   > & {
     useColorFromDataset: AbstractChartConfig["useShadowColorFromDataset"];
-  }) => JSX.Element[];
-  renderLegend: (width: any, legendOffset: any) => JSX.Element[];
-  render(): JSX.Element;
+  }) => React.JSX.Element[];
+  renderLegend: (width: any, legendOffset: any) => React.JSX.Element[];
+  render(): React.JSX.Element;
 }
 export default LineChart;
 //# sourceMappingURL=LineChart.d.ts.map

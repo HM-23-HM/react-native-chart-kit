@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import { ViewStyle } from "react-native";
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
 export interface PieChartProps extends AbstractChartProps {
@@ -16,7 +16,7 @@ export interface PieChartProps extends AbstractChartProps {
 }
 declare type PieChartState = {};
 declare class PieChart extends AbstractChart<PieChartProps, PieChartState> {
-  render(): JSX.Element;
+  render(): React.JSX.Element;
 }
 export default PieChart;
 //# sourceMappingURL=PieChart.d.ts.map

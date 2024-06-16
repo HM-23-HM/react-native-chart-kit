@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import { Color, TextProps } from "react-native-svg";
 export declare type LegendItemProps = {
   baseLegendItemX: number;
@@ -8,5 +8,5 @@ export declare type LegendItemProps = {
   iconColor: Color;
   labelProps: TextProps;
 };
-export declare const LegendItem: (props: LegendItemProps) => JSX.Element;
+export declare const LegendItem: (props: LegendItemProps) => React.JSX.Element;
 //# sourceMappingURL=LegendItem.d.ts.map

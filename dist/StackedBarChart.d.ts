@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 import { ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
@@ -140,8 +140,8 @@ declare class StackedBarChart extends AbstractChart<
   }: Pick<AbstractChartConfig, "height" | "width"> & {
     legend: string[];
     colors: string[];
-  }) => JSX.Element[];
-  render(): JSX.Element;
+  }) => React.JSX.Element[];
+  render(): React.JSX.Element;
 }
 export default StackedBarChart;
 //# sourceMappingURL=StackedBarChart.d.ts.map

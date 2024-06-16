@@ -49,7 +49,7 @@
   "peerDependencies": {
     "react": "18.2.0",
     "react-native": "0.72.10",
-    "react-native-svg": "> 6.4.1"
+    "react-native-svg": "13.9.0"
   },
   "dependencies": {
     "lodash": "^4.17.13",
