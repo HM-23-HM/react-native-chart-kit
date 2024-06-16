@@ -1,7 +1,7 @@
 import Pie from "paths-js/pie";
 import React from "react";
-import { View, ViewStyle } from "react-native";
-import { G, Path, Rect, Svg, Text } from "react-native-svg";
+import { View, ViewStyle, Text } from "react-native";
+import { G, Path, Rect, Svg } from "react-native-svg";
 
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
 
@@ -88,15 +88,17 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
           ) : null}
           {hasLegend ? (
             <Text
-              fill={c.item.legendFontColor}
-              fontSize={c.item.legendFontSize}
-              fontFamily={c.item.legendFontFamily}
-              x={this.props.width / 2.5}
-              y={
-                -(this.props.height / 2.5) +
-                ((this.props.height * 0.8) / this.props.data.length) * i +
-                12 * 2
-              }
+              style={{
+                color: c.item.legendFontColor,
+                fontFamily: c.item.legendFontFamily,
+                fontSize: c.item.legendFontSize
+              }}
+              // x={this.props.width / 2.5}
+              // y={
+              //   -(this.props.height / 2.5) +
+              //   ((this.props.height * 0.8) / this.props.data.length) * i +
+              //   12 * 2
+              // }
             >
               {`${value} ${c.item.name}`}
             </Text>
