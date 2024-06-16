@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
@@ -36,7 +35,7 @@ export interface BarChartProps extends AbstractChartProps {
 }
 declare type BarChartState = {};
 declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
-  getBarPercentage: () => number;
+  getBarPercentage: () => any;
   renderBars: ({
     data,
     width,
@@ -48,20 +47,19 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
   }: Pick<
     Pick<
       AbstractChartConfig,
-      | "color"
-      | "style"
-      | "backgroundColor"
       | "height"
-      | "paddingRight"
-      | "paddingTop"
-      | "width"
+      | "style"
       | "strokeWidth"
       | "propsForBackgroundLines"
       | "propsForLabels"
+      | "color"
       | "labelColor"
       | "propsForVerticalLabels"
       | "propsForHorizontalLabels"
       | "count"
+      | "width"
+      | "paddingTop"
+      | "paddingRight"
       | "horizontalLabelRotation"
       | "formatYLabel"
       | "labels"
@@ -71,6 +69,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "formatXLabel"
       | "verticalLabelsHeightPercentage"
       | "formatTopBarValue"
+      | "backgroundColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"
@@ -99,11 +98,11 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "scrollableInfoOffset"
       | "scrollableInfoSize"
     >,
-    "height" | "paddingRight" | "paddingTop" | "width" | "barRadius"
+    "height" | "width" | "paddingTop" | "paddingRight" | "barRadius"
   > & {
     data: number[];
     withCustomBarColorFromData: boolean;
-  }) => JSX.Element[];
+  }) => any[];
   renderBarTops: ({
     data,
     width,
@@ -113,20 +112,19 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
   }: Pick<
     Pick<
       AbstractChartConfig,
-      | "color"
-      | "style"
-      | "backgroundColor"
       | "height"
-      | "paddingRight"
-      | "paddingTop"
-      | "width"
+      | "style"
       | "strokeWidth"
       | "propsForBackgroundLines"
       | "propsForLabels"
+      | "color"
       | "labelColor"
       | "propsForVerticalLabels"
       | "propsForHorizontalLabels"
       | "count"
+      | "width"
+      | "paddingTop"
+      | "paddingRight"
       | "horizontalLabelRotation"
       | "formatYLabel"
       | "labels"
@@ -136,6 +134,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "formatXLabel"
       | "verticalLabelsHeightPercentage"
       | "formatTopBarValue"
+      | "backgroundColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"
@@ -164,16 +163,16 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "scrollableInfoOffset"
       | "scrollableInfoSize"
     >,
-    "height" | "paddingRight" | "paddingTop" | "width"
+    "height" | "width" | "paddingTop" | "paddingRight"
   > & {
     data: number[];
-  }) => JSX.Element[];
+  }) => any[];
   renderColors: ({
     data,
     flatColor
   }: Pick<AbstractChartConfig, "data"> & {
     flatColor: boolean;
-  }) => JSX.Element[];
+  }) => any[];
   renderValuesOnTopOfBars: ({
     data,
     width,
@@ -183,20 +182,19 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
   }: Pick<
     Pick<
       AbstractChartConfig,
-      | "color"
-      | "style"
-      | "backgroundColor"
       | "height"
-      | "paddingRight"
-      | "paddingTop"
-      | "width"
+      | "style"
       | "strokeWidth"
       | "propsForBackgroundLines"
       | "propsForLabels"
+      | "color"
       | "labelColor"
       | "propsForVerticalLabels"
       | "propsForHorizontalLabels"
       | "count"
+      | "width"
+      | "paddingTop"
+      | "paddingRight"
       | "horizontalLabelRotation"
       | "formatYLabel"
       | "labels"
@@ -206,6 +204,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "formatXLabel"
       | "verticalLabelsHeightPercentage"
       | "formatTopBarValue"
+      | "backgroundColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"
@@ -234,11 +233,11 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
       | "scrollableInfoOffset"
       | "scrollableInfoSize"
     >,
-    "height" | "paddingRight" | "paddingTop" | "width"
+    "height" | "width" | "paddingTop" | "paddingRight"
   > & {
     data: number[];
-  }) => JSX.Element[];
-  render(): JSX.Element;
+  }) => any[];
+  render(): any;
 }
 export default BarChart;
 //# sourceMappingURL=BarChart.d.ts.map

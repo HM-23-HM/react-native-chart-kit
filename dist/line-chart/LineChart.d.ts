@@ -1,5 +1,5 @@
 import React from "react";
-import { Animated, TextInput, ViewStyle } from "react-native";
+import { Animated, ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
   AbstractChartProps
@@ -194,14 +194,14 @@ declare type LineChartState = {
   scrollableDotHorizontalOffset: Animated.Value;
 };
 declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
-  label: React.RefObject<TextInput>;
+  label: any;
   state: {
     scrollableDotHorizontalOffset: Animated.Value;
   };
-  getColor: (dataset: Dataset, opacity: number) => string;
-  getStrokeWidth: (dataset: Dataset) => number;
+  getColor: (dataset: Dataset, opacity: number) => any;
+  getStrokeWidth: (dataset: Dataset) => any;
   getDatas: (data: Dataset[]) => number[];
-  getPropsForDots: (x: any, i: number) => object;
+  getPropsForDots: (x: any, i: number) => any;
   renderDots: ({
     data,
     width,
@@ -211,10 +211,10 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
     onDataPointClick
   }: Pick<
     AbstractChartConfig,
-    "height" | "paddingRight" | "paddingTop" | "width" | "data"
+    "height" | "data" | "width" | "paddingTop" | "paddingRight"
   > & {
     onDataPointClick: LineChartProps["onDataPointClick"];
-  }) => React.ReactNode[];
+  }) => any[];
   renderScrollableDot: ({
     data,
     width,
@@ -244,10 +244,10 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
     useColorFromDataset
   }: Pick<
     AbstractChartConfig,
-    "height" | "paddingRight" | "paddingTop" | "width" | "data"
+    "height" | "data" | "width" | "paddingTop" | "paddingRight"
   > & {
     useColorFromDataset: AbstractChartConfig["useShadowColorFromDataset"];
-  }) => JSX.Element[];
+  }) => any[];
   renderLine: ({
     width,
     height,
@@ -282,7 +282,7 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
   }: Pick<
     AbstractChartConfig,
     "data" | "width" | "height" | "paddingRight" | "paddingTop"
-  >) => JSX.Element[];
+  >) => any[];
   renderBezierShadow: ({
     width,
     height,
@@ -292,12 +292,12 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
     useColorFromDataset
   }: Pick<
     AbstractChartConfig,
-    "height" | "paddingRight" | "paddingTop" | "width" | "data"
+    "height" | "data" | "width" | "paddingTop" | "paddingRight"
   > & {
     useColorFromDataset: AbstractChartConfig["useShadowColorFromDataset"];
-  }) => JSX.Element[];
-  renderLegend: (width: any, legendOffset: any) => JSX.Element[];
-  render(): JSX.Element;
+  }) => any[];
+  renderLegend: (width: any, legendOffset: any) => any;
+  render(): any;
 }
 export default LineChart;
 //# sourceMappingURL=LineChart.d.ts.map

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
@@ -55,8 +54,8 @@ declare class StackedBarChart extends AbstractChart<
   StackedBarChartProps,
   StackedBarChartState
 > {
-  getBarPercentage: () => number;
-  getBarRadius: (ret: string | any[], x: string | any[]) => number;
+  getBarPercentage: () => any;
+  getBarRadius: (ret: string | any[], x: string | any[]) => any;
   renderBars: ({
     data,
     width,
@@ -70,20 +69,19 @@ declare class StackedBarChart extends AbstractChart<
   }: Pick<
     Pick<
       AbstractChartConfig,
-      | "color"
-      | "style"
-      | "backgroundColor"
       | "height"
-      | "paddingRight"
-      | "paddingTop"
-      | "width"
+      | "style"
       | "strokeWidth"
       | "propsForBackgroundLines"
       | "propsForLabels"
+      | "color"
       | "labelColor"
       | "propsForVerticalLabels"
       | "propsForHorizontalLabels"
       | "count"
+      | "width"
+      | "paddingTop"
+      | "paddingRight"
       | "horizontalLabelRotation"
       | "formatYLabel"
       | "labels"
@@ -93,6 +91,7 @@ declare class StackedBarChart extends AbstractChart<
       | "formatXLabel"
       | "verticalLabelsHeightPercentage"
       | "formatTopBarValue"
+      | "backgroundColor"
       | "backgroundGradientFrom"
       | "backgroundGradientFromOpacity"
       | "backgroundGradientTo"
@@ -122,9 +121,9 @@ declare class StackedBarChart extends AbstractChart<
       | "scrollableInfoSize"
     >,
     | "height"
-    | "paddingRight"
-    | "paddingTop"
     | "width"
+    | "paddingTop"
+    | "paddingRight"
     | "stackedBar"
     | "verticalLabelsHeightPercentage"
   > & {
@@ -140,8 +139,8 @@ declare class StackedBarChart extends AbstractChart<
   }: Pick<AbstractChartConfig, "height" | "width"> & {
     legend: string[];
     colors: string[];
-  }) => JSX.Element[];
-  render(): JSX.Element;
+  }) => any[];
+  render(): any;
 }
 export default StackedBarChart;
 //# sourceMappingURL=StackedBarChart.d.ts.map
