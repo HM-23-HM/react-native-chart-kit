@@ -1,5 +1,5 @@
 import Pie from "paths-js/pie";
-import React from "react";
+import React, { ReactNode } from "react";
 import { View, ViewStyle } from "react-native";
 import { G, Path, Rect, Svg, Text } from "react-native-svg";
 
@@ -87,7 +87,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
             />
           ) : null}
           {hasLegend ? (
-            <View>
+            <>
               <Text
                 fill={c.item.legendFontColor}
                 fontSize={c.item.legendFontSize}
@@ -114,7 +114,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
               >
                 {c.item.name}
               </Text>
-            </View>
+            </>
           ) : null}
         </G>
       );

@@ -1,4 +1,4 @@
-import React from "react";
+/// <reference types="react" />
 import { ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
@@ -103,7 +103,7 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
   > & {
     data: number[];
     withCustomBarColorFromData: boolean;
-  }) => React.JSX.Element[];
+  }) => JSX.Element[];
   renderBarTops: ({
     data,
     width,
@@ -167,13 +167,13 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
     "height" | "paddingRight" | "paddingTop" | "width"
   > & {
     data: number[];
-  }) => React.JSX.Element[];
+  }) => JSX.Element[];
   renderColors: ({
     data,
     flatColor
   }: Pick<AbstractChartConfig, "data"> & {
     flatColor: boolean;
-  }) => React.JSX.Element[];
+  }) => JSX.Element[];
   renderValuesOnTopOfBars: ({
     data,
     width,
@@ -237,8 +237,8 @@ declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
     "height" | "paddingRight" | "paddingTop" | "width"
   > & {
     data: number[];
-  }) => React.JSX.Element[];
-  render(): React.JSX.Element;
+  }) => JSX.Element[];
+  render(): JSX.Element;
 }
 export default BarChart;
 //# sourceMappingURL=BarChart.d.ts.map
