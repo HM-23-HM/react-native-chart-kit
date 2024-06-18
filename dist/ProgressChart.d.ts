@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
@@ -34,7 +35,7 @@ declare class ProgressChart extends AbstractChart<
     strokeWidth: number;
     radius: number;
   };
-  render(): any;
+  render(): JSX.Element;
 }
 export default ProgressChart;
 //# sourceMappingURL=ProgressChart.d.ts.map
