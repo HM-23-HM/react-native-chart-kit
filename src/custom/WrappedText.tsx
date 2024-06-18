@@ -2,24 +2,27 @@ import React from "react";
 import { useWindowDimensions } from "react-native";
 import { Svg, G, Text } from "react-native-svg";
 
+export type LegendValueProps = {
+  maxWidth?: number;
+  fontSize?: number;
+  fontFamily?: string;
+  lineHeight?: string;
+};
+
 const WrappedText = ({
   text,
   x,
   y,
   fill,
-  fontSize,
-  fontFamily,
-  maxLegendWidth
+  legendValueProps
 }: {
   text: string;
   x: number;
   y: number;
   fill: string;
-  fontSize: number;
-  fontFamily: string;
-  maxLegendWidth: number;
+  legendValueProps: LegendValueProps;
 }) => {
-  const lineHeight = fontSize * 1.5;
+  const lineHeight = legendValueProps.fontSize * 1.5;
 
   // Helper function to split text into lines
   const wrapText = (text, fontSize) => {
@@ -32,7 +35,7 @@ const WrappedText = ({
       const testLine = `${currentLine} ${word}`;
       const testWidth = fontSize * 0.6 * testLine.length; // Approximate text width calculation
 
-      if (testWidth < maxLegendWidth) {
+      if (testWidth < legendValueProps.maxWidth) {
         currentLine = testLine;
       } else {
         lines.push(currentLine);
@@ -44,7 +47,7 @@ const WrappedText = ({
     return lines;
   };
 
-  const lines = wrapText(text, fontSize);
+  const lines = wrapText(text, legendValueProps.fontSize);
 
   return (
     <G>
@@ -52,8 +55,8 @@ const WrappedText = ({
         <Text
           key={index}
           fill={fill}
-          fontSize={fontSize}
-          fontFamily={fontFamily}
+          fontSize={legendValueProps.fontSize}
+          fontFamily={legendValueProps.fontFamily}
           x={x}
           y={y + index * lineHeight}
         >

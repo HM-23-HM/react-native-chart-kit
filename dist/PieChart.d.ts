@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import { ViewStyle } from "react-native";
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
+import { LegendValueProps } from "./custom/WrappedText";
 export interface PieChartProps extends AbstractChartProps {
   absolute?: boolean;
   accessor: string;
@@ -10,7 +11,7 @@ export interface PieChartProps extends AbstractChartProps {
   data: Array<any>;
   hasLegend?: boolean;
   height: number;
-  maxLegendWidth?: number;
+  legendValueProps?: LegendValueProps;
   paddingLeft: string;
   style?: Partial<ViewStyle>;
   width: number;

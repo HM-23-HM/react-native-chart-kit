@@ -1,20 +1,22 @@
 /// <reference types="react" />
+export declare type LegendValueProps = {
+  maxWidth?: number;
+  fontSize?: number;
+  fontFamily?: string;
+  lineHeight?: string;
+};
 declare const WrappedText: ({
   text,
   x,
   y,
   fill,
-  fontSize,
-  fontFamily,
-  maxLegendWidth
+  legendValueProps
 }: {
   text: string;
   x: number;
   y: number;
   fill: string;
-  fontSize: number;
-  fontFamily: string;
-  maxLegendWidth: number;
+  legendValueProps: LegendValueProps;
 }) => JSX.Element;
 export default WrappedText;
 //# sourceMappingURL=WrappedText.d.ts.map

@@ -4,7 +4,7 @@ import { useWindowDimensions, View, ViewStyle } from "react-native";
 import { G, Path, Rect, Svg, Text } from "react-native-svg";
 
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
-import WrappedText from "./custom/WrappedText";
+import WrappedText, { LegendValueProps } from "./custom/WrappedText";
 
 export interface PieChartProps extends AbstractChartProps {
   absolute?: boolean;
@@ -15,7 +15,7 @@ export interface PieChartProps extends AbstractChartProps {
   data: Array<any>;
   hasLegend?: boolean;
   height: number;
-  maxLegendWidth?: number;
+  legendValueProps?: LegendValueProps;
   paddingLeft: string;
   style?: Partial<ViewStyle>;
   width: number;
@@ -30,7 +30,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
       avoidFalseZero = false,
       backgroundColor,
       hasLegend = true,
-      maxLegendWidth,
+      legendValueProps,
       style = {}
     } = this.props;
 
@@ -109,9 +109,11 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
               </Text>
               <WrappedText
                 fill={c.item.legendFontColor}
-                fontSize={c.item.legendFontSize}
-                fontFamily={c.item.legendFontFamily}
-                maxLegendWidth={maxLegendWidth ?? width * 0.25}
+                legendValueProps={{
+                  maxWidth: legendValueProps.maxWidth ?? width * 0.25,
+                  fontSize: c.item.legendFontSize,
+                  fontFamily: c.item.legendFontFamily
+                }}
                 x={this.props.width / 2.5}
                 y={
                   -(this.props.height / 2.5) +
