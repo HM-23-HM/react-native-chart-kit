@@ -3,7 +3,7 @@ import { useWindowDimensions } from "react-native";
 import { Svg, G, Text } from "react-native-svg";
 
 export type LegendValueProps = {
-  maxWidth?: number;
+  maxWidth: number;
   fontSize?: number;
   fontFamily?: string;
   lineHeight?: string;

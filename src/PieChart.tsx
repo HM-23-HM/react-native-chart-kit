@@ -15,7 +15,7 @@ export interface PieChartProps extends AbstractChartProps {
   data: Array<any>;
   hasLegend?: boolean;
   height: number;
-  legendValueProps?: LegendValueProps;
+  legendValueProps: LegendValueProps;
   paddingLeft: string;
   style?: Partial<ViewStyle>;
   width: number;
@@ -35,8 +35,6 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
     } = this.props;
 
     const { borderRadius = 0 } = style;
-
-    const { width } = useWindowDimensions();
 
     const chart = Pie({
       center: this.props.center || [0, 0],
@@ -110,7 +108,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
               <WrappedText
                 fill={c.item.legendFontColor}
                 legendValueProps={{
-                  maxWidth: legendValueProps.maxWidth ?? width * 0.25,
+                  maxWidth: legendValueProps.maxWidth,
                   fontSize: c.item.legendFontSize,
                   fontFamily: c.item.legendFontFamily
                 }}
