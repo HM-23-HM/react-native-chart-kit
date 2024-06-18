@@ -21,6 +21,10 @@ const WrappedText = ({
   fill: string;
   legendValueProps: LegendValueProps;
 }) => {
+  if (!text) {
+    console.log({ text, ...legendValueProps });
+    return;
+  }
   const lineHeight = legendValueProps.fontSize * 1.5;
 
   // Helper function to split text into lines
