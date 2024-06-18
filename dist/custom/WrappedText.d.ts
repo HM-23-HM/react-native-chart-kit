@@ -1,6 +1,6 @@
 /// <reference types="react" />
 export declare type LegendValueProps = {
-  maxWidth?: number;
+  maxWidth: number;
   fontSize?: number;
   fontFamily?: string;
   lineHeight?: string;

@@ -11,7 +11,7 @@ export interface PieChartProps extends AbstractChartProps {
   data: Array<any>;
   hasLegend?: boolean;
   height: number;
-  legendValueProps?: LegendValueProps;
+  legendValueProps: LegendValueProps;
   paddingLeft: string;
   style?: Partial<ViewStyle>;
   width: number;
