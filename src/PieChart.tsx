@@ -1,23 +1,24 @@
 import Pie from "paths-js/pie";
 import React from "react";
-import { View, ViewStyle } from "react-native";
+import { useWindowDimensions, View, ViewStyle } from "react-native";
 import { G, Path, Rect, Svg, Text } from "react-native-svg";
 
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
 import WrappedText from "./custom/WrappedText";
 
 export interface PieChartProps extends AbstractChartProps {
-  data: Array<any>;
-  width: number;
-  height: number;
-  accessor: string;
-  backgroundColor: string;
-  paddingLeft: string;
-  center?: Array<number>;
   absolute?: boolean;
-  hasLegend?: boolean;
-  style?: Partial<ViewStyle>;
+  accessor: string;
   avoidFalseZero?: boolean;
+  backgroundColor: string;
+  center?: Array<number>;
+  data: Array<any>;
+  hasLegend?: boolean;
+  height: number;
+  maxLegendWidth?: number;
+  paddingLeft: string;
+  style?: Partial<ViewStyle>;
+  width: number;
 }
 
 type PieChartState = {};
@@ -25,14 +26,17 @@ type PieChartState = {};
 class PieChart extends AbstractChart<PieChartProps, PieChartState> {
   render() {
     const {
-      style = {},
-      backgroundColor,
       absolute = false,
+      avoidFalseZero = false,
+      backgroundColor,
       hasLegend = true,
-      avoidFalseZero = false
+      maxLegendWidth,
+      style = {}
     } = this.props;
 
     const { borderRadius = 0 } = style;
+
+    const { width } = useWindowDimensions();
 
     const chart = Pie({
       center: this.props.center || [0, 0],
@@ -91,9 +95,9 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
             <G>
               <Text
                 fill={c.item.legendFontColor}
-                fontSize={c.item.legendFontSize}
+                fontSize={c.item.legendFontSize * 1.2}
                 fontFamily={c.item.legendFontFamily}
-                fontWeight={"500"}
+                fontWeight={"600"}
                 x={this.props.width / 2.5}
                 y={
                   -(this.props.height / 2.5) +
@@ -107,6 +111,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
                 fill={c.item.legendFontColor}
                 fontSize={c.item.legendFontSize}
                 fontFamily={c.item.legendFontFamily}
+                maxLegendWidth={maxLegendWidth ?? width * 0.25}
                 x={this.props.width / 2.5}
                 y={
                   -(this.props.height / 2.5) +

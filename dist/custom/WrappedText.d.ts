@@ -5,14 +5,16 @@ declare const WrappedText: ({
   y,
   fill,
   fontSize,
-  fontFamily
+  fontFamily,
+  maxLegendWidth
 }: {
-  text: any;
-  x: any;
-  y: any;
-  fill: any;
-  fontSize: any;
-  fontFamily: any;
+  text: string;
+  x: number;
+  y: number;
+  fill: string;
+  fontSize: number;
+  fontFamily: string;
+  maxLegendWidth: number;
 }) => JSX.Element;
 export default WrappedText;
 //# sourceMappingURL=WrappedText.d.ts.map

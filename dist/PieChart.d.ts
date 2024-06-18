@@ -2,17 +2,18 @@
 import { ViewStyle } from "react-native";
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
 export interface PieChartProps extends AbstractChartProps {
-  data: Array<any>;
-  width: number;
-  height: number;
-  accessor: string;
-  backgroundColor: string;
-  paddingLeft: string;
-  center?: Array<number>;
   absolute?: boolean;
-  hasLegend?: boolean;
-  style?: Partial<ViewStyle>;
+  accessor: string;
   avoidFalseZero?: boolean;
+  backgroundColor: string;
+  center?: Array<number>;
+  data: Array<any>;
+  hasLegend?: boolean;
+  height: number;
+  maxLegendWidth?: number;
+  paddingLeft: string;
+  style?: Partial<ViewStyle>;
+  width: number;
 }
 declare type PieChartState = {};
 declare class PieChart extends AbstractChart<PieChartProps, PieChartState> {

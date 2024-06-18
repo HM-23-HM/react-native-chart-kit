@@ -2,9 +2,23 @@ import React from "react";
 import { useWindowDimensions } from "react-native";
 import { Svg, G, Text } from "react-native-svg";
 
-const WrappedText = ({ text, x, y, fill, fontSize, fontFamily }) => {
-  const { width: screenWidth } = useWindowDimensions();
-  const width = screenWidth * 0.2;
+const WrappedText = ({
+  text,
+  x,
+  y,
+  fill,
+  fontSize,
+  fontFamily,
+  maxLegendWidth
+}: {
+  text: string;
+  x: number;
+  y: number;
+  fill: string;
+  fontSize: number;
+  fontFamily: string;
+  maxLegendWidth: number;
+}) => {
   const lineHeight = fontSize * 1.5;
 
   // Helper function to split text into lines
@@ -18,7 +32,7 @@ const WrappedText = ({ text, x, y, fill, fontSize, fontFamily }) => {
       const testLine = `${currentLine} ${word}`;
       const testWidth = fontSize * 0.6 * testLine.length; // Approximate text width calculation
 
-      if (testWidth < width) {
+      if (testWidth < maxLegendWidth) {
         currentLine = testLine;
       } else {
         lines.push(currentLine);
