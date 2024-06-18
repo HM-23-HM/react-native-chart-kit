@@ -1,6 +1,5 @@
 import React from "react";
-import { useWindowDimensions } from "react-native";
-import { Svg, G, Text } from "react-native-svg";
+import { G, Text } from "react-native-svg";
 
 export type LegendValueProps = {
   maxWidth: number;
@@ -26,7 +25,8 @@ const WrappedText = ({
 
   // Helper function to split text into lines
   const wrapText = (text, fontSize) => {
-    const words = text.split(" ");
+    if (!text) return;
+    const words = text?.split(" ");
     const lines = [];
     let currentLine = words[0];
 

@@ -1,6 +1,6 @@
 import Pie from "paths-js/pie";
 import React from "react";
-import { useWindowDimensions, View, ViewStyle } from "react-native";
+import { View, ViewStyle } from "react-native";
 import { G, Path, Rect, Svg, Text } from "react-native-svg";
 
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
