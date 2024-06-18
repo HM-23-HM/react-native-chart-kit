@@ -93,6 +93,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
                 fill={c.item.legendFontColor}
                 fontSize={c.item.legendFontSize}
                 fontFamily={c.item.legendFontFamily}
+                fontWeight={"500"}
                 x={this.props.width / 2.5}
                 y={
                   -(this.props.height / 2.5) +
@@ -104,7 +105,6 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
               </Text>
               <WrappedText
                 fill={c.item.legendFontColor}
-                lineHeight={c.item.legendFontSize}
                 fontSize={c.item.legendFontSize}
                 fontFamily={c.item.legendFontFamily}
                 x={this.props.width / 2.5}
@@ -112,24 +112,11 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
                   -(this.props.height / 2.5) +
                   ((this.props.height * 0.8) / this.props.data.length) * i +
                   12 * 2 +
+                  8 +
                   c.item.legendFontSize
                 }
                 text={c.item.name}
               />
-              {/* <Text
-                fill={c.item.legendFontColor}
-                fontSize={c.item.legendFontSize}
-                fontFamily={c.item.legendFontFamily}
-                x={this.props.width / 2.5}
-                y={
-                  -(this.props.height / 2.5) +
-                  ((this.props.height * 0.8) / this.props.data.length) * i +
-                  12 * 2 +
-                  c.item.legendFontSize
-                }
-              >
-                {c.item.name}
-              </Text> */}
             </G>
           ) : null}
         </G>

@@ -3,7 +3,6 @@ declare const WrappedText: ({
   text,
   x,
   y,
-  lineHeight,
   fill,
   fontSize,
   fontFamily
@@ -11,7 +10,6 @@ declare const WrappedText: ({
   text: any;
   x: any;
   y: any;
-  lineHeight: any;
   fill: any;
   fontSize: any;
   fontFamily: any;

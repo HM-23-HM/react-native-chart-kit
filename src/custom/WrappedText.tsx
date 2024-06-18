@@ -2,17 +2,10 @@ import React from "react";
 import { useWindowDimensions } from "react-native";
 import { Svg, G, Text } from "react-native-svg";
 
-const WrappedText = ({
-  text,
-  x,
-  y,
-  lineHeight,
-  fill,
-  fontSize,
-  fontFamily
-}) => {
+const WrappedText = ({ text, x, y, fill, fontSize, fontFamily }) => {
   const { width: screenWidth } = useWindowDimensions();
   const width = screenWidth * 0.2;
+  const lineHeight = fontSize * 1.5;
 
   // Helper function to split text into lines
   const wrapText = (text, fontSize) => {
