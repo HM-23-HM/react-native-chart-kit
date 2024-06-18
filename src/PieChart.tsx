@@ -4,6 +4,7 @@ import { View, ViewStyle } from "react-native";
 import { G, Path, Rect, Svg, Text } from "react-native-svg";
 
 import AbstractChart, { AbstractChartProps } from "./AbstractChart";
+import WrappedText from "./custom/WrappedText";
 
 export interface PieChartProps extends AbstractChartProps {
   data: Array<any>;
@@ -101,7 +102,21 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
               >
                 {value}
               </Text>
-              <Text
+              <WrappedText
+                fill={c.item.legendFontColor}
+                lineHeight={c.item.legendFontSize}
+                fontSize={c.item.legendFontSize}
+                fontFamily={c.item.legendFontFamily}
+                x={this.props.width / 2.5}
+                y={
+                  -(this.props.height / 2.5) +
+                  ((this.props.height * 0.8) / this.props.data.length) * i +
+                  12 * 2 +
+                  c.item.legendFontSize
+                }
+                text={c.item.name}
+              />
+              {/* <Text
                 fill={c.item.legendFontColor}
                 fontSize={c.item.legendFontSize}
                 fontFamily={c.item.legendFontFamily}
@@ -114,7 +129,7 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
                 }
               >
                 {c.item.name}
-              </Text>
+              </Text> */}
             </G>
           ) : null}
         </G>
