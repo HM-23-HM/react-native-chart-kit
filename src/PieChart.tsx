@@ -109,7 +109,8 @@ class PieChart extends AbstractChart<PieChartProps, PieChartState> {
                 y={
                   -(this.props.height / 2.5) +
                   ((this.props.height * 0.8) / this.props.data.length) * i +
-                  12 * 2
+                  12 * 2 +
+                  c.item.legendFontSize
                 }
               >
                 {c.item.name}
