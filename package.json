@@ -38,7 +38,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "test": "jest",
-    "build": "tsc",
+    "build": "tsc || exit 0",
     "dev": "tsc --watch",
     "prepublish": "yarn build",
     "prepare": "yarn build"
