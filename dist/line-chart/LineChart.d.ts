@@ -1,5 +1,5 @@
 import React from "react";
-import { Animated, TextInput, ViewStyle } from "react-native";
+import { Animated, ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
   AbstractChartProps
@@ -194,14 +194,14 @@ declare type LineChartState = {
   scrollableDotHorizontalOffset: Animated.Value;
 };
 declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
-  label: React.RefObject<TextInput>;
+  label: any;
   state: {
     scrollableDotHorizontalOffset: Animated.Value;
   };
-  getColor: (dataset: Dataset, opacity: number) => string;
-  getStrokeWidth: (dataset: Dataset) => number;
+  getColor: (dataset: Dataset, opacity: number) => any;
+  getStrokeWidth: (dataset: Dataset) => any;
   getDatas: (data: Dataset[]) => number[];
-  getPropsForDots: (x: any, i: number) => object;
+  getPropsForDots: (x: any, i: number) => any;
   renderDots: ({
     data,
     width,
@@ -214,7 +214,7 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
     "height" | "paddingRight" | "paddingTop" | "width" | "data"
   > & {
     onDataPointClick: LineChartProps["onDataPointClick"];
-  }) => React.ReactNode[];
+  }) => any[];
   renderScrollableDot: ({
     data,
     width,
@@ -296,7 +296,7 @@ declare class LineChart extends AbstractChart<LineChartProps, LineChartState> {
   > & {
     useColorFromDataset: AbstractChartConfig["useShadowColorFromDataset"];
   }) => JSX.Element[];
-  renderLegend: (width: any, legendOffset: any) => JSX.Element[];
+  renderLegend: (width: any, legendOffset: any) => any;
   render(): JSX.Element;
 }
 export default LineChart;

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
@@ -55,8 +54,8 @@ declare class StackedBarChart extends AbstractChart<
   StackedBarChartProps,
   StackedBarChartState
 > {
-  getBarPercentage: () => number;
-  getBarRadius: (ret: string | any[], x: string | any[]) => number;
+  getBarPercentage: () => any;
+  getBarRadius: (ret: string | any[], x: string | any[]) => any;
   renderBars: ({
     data,
     width,
