@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { ViewStyle } from "react-native";
 import AbstractChart, {
   AbstractChartConfig,
@@ -35,7 +36,7 @@ export interface BarChartProps extends AbstractChartProps {
 }
 declare type BarChartState = {};
 declare class BarChart extends AbstractChart<BarChartProps, BarChartState> {
-  getBarPercentage: () => any;
+  getBarPercentage: () => number;
   renderBars: ({
     data,
     width,

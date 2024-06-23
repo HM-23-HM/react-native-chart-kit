@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { RectProps } from "react-native-svg";
 import AbstractChart from "../AbstractChart";
 import { ContributionGraphProps, ContributionGraphState } from ".";
@@ -16,8 +17,8 @@ declare class ContributionGraph extends AbstractChart<
 > {
   constructor(props: ContributionGraphProps);
   UNSAFE_componentWillReceiveProps(nextProps: ContributionGraphProps): void;
-  getSquareSizeWithGutter(): any;
-  getMonthLabelSize(): any;
+  getSquareSizeWithGutter(): number;
+  getMonthLabelSize(): number;
   getStartDate(): Date;
   getEndDate(): Date;
   getStartDateWithEmptyDays(): Date;
@@ -35,10 +36,12 @@ declare class ContributionGraph extends AbstractChart<
     maxValue: number;
   };
   getValueForIndex(index: number): any;
-  getClassNameForIndex(index: number): any;
+  getClassNameForIndex(index: number): string;
   getTitleForIndex(index: number): any;
   getTooltipDataAttrsForIndex(index: number): any;
-  getTooltipDataAttrsForValue(value: ContributionChartValue): any;
+  getTooltipDataAttrsForValue(
+    value: ContributionChartValue
+  ): Partial<RectProps>;
   getTransformForWeek(weekIndex: number): number[];
   getTransformForMonthLabels(): string;
   getTransformForAllWeeks(): string;
@@ -48,8 +51,8 @@ declare class ContributionGraph extends AbstractChart<
   renderSquare(dayIndex: number, index: number): JSX.Element;
   handleDayPress(index: number): void;
   renderWeek(weekIndex: number): JSX.Element;
-  renderAllWeeks(): any;
-  renderMonthLabels(): any;
+  renderAllWeeks(): JSX.Element[];
+  renderMonthLabels(): JSX.Element[];
   static defaultProps: {
     numDays: number;
     endDate: Date;
